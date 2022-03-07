@@ -1,0 +1,287 @@
+* {
+  font-family: "Libre Franklin";
+  scroll-behavior: smooth;
+}
+
+h2{ 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size:2rem;
+}
+
+body {
+  padding:0;
+  margin:0;
+  background-image: url("https://global.upenn.edu/themes/custom/penn_global/images/svg/background-patterns/pattern_global_light_waves.svg");
+  background-color:#f0f0f0;
+  background-size:110%; 
+}
+
+#optcalculator h2{
+  text-align:center; 
+}
+
+.header-inner {
+  margin:auto;
+  width:70%; 
+  padding:2rem 1rem; 
+  color:white;
+  position:relative;
+  z-index:1;
+}
+
+nav {
+ padding:1rem;
+}
+
+#backtosite {
+font-size:.75rem;
+text-transform:uppercase;
+display:block;
+text-align: right;
+}
+
+.header-wrapper { 
+  background-color: #01256e;
+  position:relative; 
+  overflow:hidden;
+}
+
+.header-inner::before {
+  position:absolute; 
+  content:'';
+  background-color: #face00;
+  height:6px;
+  width:60%;
+  top:15%;
+}
+
+#text1 {
+  display:none; 
+}
+
+.header-wrapper::before {
+ content:'';
+ background-image:url('https://global.upenn.edu/themes/custom/penn_global/images/svg/background-patterns/pattern_global_dark_chevrons.svg');
+ position:absolute;
+ z-index:1;  
+ opacity:0.5;
+ background-repeat:repeat;
+ width: 1500px;
+ height: 1500px;
+}
+
+.header-logo {
+ 
+  padding:2rem 4rem; 
+}
+
+#startselect-inner {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap:wrap;
+}
+
+#startselect-inner label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 1rem;
+  flex-wrap:wrap;
+}
+
+.appear {
+  animation: fadein 1s ease;
+}
+
+.disappear {
+  animation: fadeout 1s ease;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.nxtBtn {
+  margin-top: 1rem;
+}
+
+[data-pt="pt2"] {
+  display: none;
+}
+
+.calc-section {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius:10px; 
+  border:1px solid rgba(0,0,0,0.1);
+  margin:1.4rem auto;
+  padding: 1rem;
+}
+
+.appearDelay {
+  animation: 1s fadein 0.5s ease-in-out both;
+}
+
+#pt2, #pt3, #pt4, #pt5, #pt6, #summary, #emailme {
+  display: none;
+}
+
+.opt-row {
+  display: flex;
+  margin: 1.5rem auto !important;
+  background-color: #f0f0f0 !important;
+}
+
+.opt-row input,
+.opt-row select {
+  border: 0;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+}
+
+.row-wrap {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnrow {
+  display: flex;
+  justify-content: center;
+}
+
+#summary table {
+  border: none;
+  border-collapse: collapse;
+  text-align: left;
+  width:100%; 
+
+}
+
+#summary table th {
+  font-weight: bold;
+}
+
+#summary table th,td {
+  padding: 1rem;
+  border:none; 
+    border-bottom:1px solid rgba(0,0,0,0.1); 
+  border-collapse: collapse;
+}
+
+#previousOPT {
+  padding-bottom:1.3rem;
+}
+
+.timeSpan {
+  display:none;
+  opacity:0; 
+}
+
+.bubble:hover>.timeSpan, .bubble:active>.timeSpan {
+  display: block;
+  position: absolute;
+  left: 0%;
+  bottom: -130%;
+  width: 120%;
+  border-radius: 10px;
+  font-weight: normal;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  font-size: .7rem;
+  text-align: center;
+  padding: 0.4rem;
+  opacity:1; 
+  box-shadow: 1rem 1rem 1rem rgb(0 0 0 / 10%);
+  animation: fadeInFromNone 2s cubic-bezier(0.075, 0.82, 0.165, 1); 
+  z-index:2; 
+}
+
+.bubble:hover, .bubble:active{
+  cursor:pointer; 
+}
+
+.bubble { 
+border-radius:10px; 
+background-color:#00a8a3; 
+padding:.2rem .4rem; 
+color:white; 
+display:inline-block;
+margin:.2rem;
+font-weight:600;
+position:relative; 
+}
+
+
+@keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+#summary .bubble {
+  background-color:#c20022;
+}
+
+i {
+  color: #c20022;
+}
+
+hr { 
+  border:1px solid rgba(150, 150, 150, 0.1);
+}
+
+input[type="submit"] { 
+  padding:.5rem; 
+  border:0px; 
+  border-radius:5px; 
+  background-color: #012563;
+  color:white;
+  transition: .5s ease all; 
+  }
+  
+  input[type="submit"]:hover { 
+  cursor:pointer;  
+  background-color:rgba(0,0,0,0.2);
+  }
+  
+  select { 
+   padding:.5rem; 
+   margin-top:.2rem; 
+   border:none; 
+   background-color:rgba(0,0,0,0.075);
+   border-radius:5px; 
+  }
+
+  #optcalculator { 
+    width:70%; 
+    margin:auto; 
+    }
+
+   
