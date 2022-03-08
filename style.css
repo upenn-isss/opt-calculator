@@ -91,7 +91,7 @@ text-align: right;
 }
 
 .appear {
-  animation: fadein 1s ease;
+  animation: fadein 1.5s ease;
 }
 
 .disappear {
@@ -263,7 +263,7 @@ hr {
   border:1px solid rgba(150, 150, 150, 0.1);
 }
 
-input[type="submit"] { 
+input[type="submit"], button { 
   padding:.5rem; 
   border:0px; 
   border-radius:5px; 
@@ -272,7 +272,7 @@ input[type="submit"] {
   transition: .5s ease all; 
   }
   
-  input[type="submit"]:hover { 
+  input[type="submit"]:hover, button:hover { 
   cursor:pointer;  
   background-color:rgba(0,0,0,0.2);
   }
@@ -286,6 +286,8 @@ input[type="submit"] {
   }
 
   #optcalculator { 
-    width:70%; 
+    width:90%; 
     margin:auto; 
     }
+
+   
