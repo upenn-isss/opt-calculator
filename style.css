@@ -160,6 +160,12 @@ text-align: right;
   align-items: center;
 }
 
+label[for=emailinput] {
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1.3rem; 
+}
+
 .btnrow {
   display: flex;
   justify-content: center;
@@ -283,5 +289,3 @@ input[type="submit"] {
     width:70%; 
     margin:auto; 
     }
-
-   
