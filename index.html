@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>ISSS OPT Calculator for Penn F-1 Students</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -16,16 +16,14 @@
 
 <body>
     <header>
-        <nav>
-            <span id="backtosite"><a href="#">Back to the ISSS website</a> &raquo;</span>
-        </nav>
+       
         <div class="header-logo">
             <img class="logo__img" src="https://global.upenn.edu/sites/default/files/2018-02/logo--isss.svg" alt="Penn Global">
         </div>
         <div class="header-wrapper">
             <div class="header-inner">
         <h2>OPT Calculator for Penn F-1 International Students</h2>
-        <p>Use this calculator to help determine your OPT application timeline, start date, and end date. This tool is provided as a reference and is not a substitute for a conversation with your assigned ISSS advisor. [...] </p>
+        <p>You can use this calculator to help determine your OPT application timeline, start date, and end date. This tool is provided as a reference only. Please consult your assigned ISSS advisor with any questions about your OPT dates.</p>
     </div>
     </div>
 
@@ -99,7 +97,7 @@
 
         </div>
         <hr/>
-        <p><i class="fa-solid fa-circle-info"></i> Your OPT start date is the date on which you begin your OPT employment and on which you begin accruing unemployment if you have not yet found a job.</p>
+        <p><i class="fa-solid fa-circle-info"></i> Your OPT start date is the date on which your Employment Authorization Document (EAD) becomes valid and on which you begin accruing unemployment if you have not yet found a job.</p> <p> Do not begin working before your start date, even if you have already received your EAD!</p>
 
         <input type="submit" data-pt="pt4" class="nxtBtn" value="Next: Choosing Your End Date"></input>
 
@@ -174,7 +172,7 @@
         <div class="calctext" id="text6">
            
         </div>
-
+        <p>Use the date picker below to calculate your OPT end date based on your selected start date.</p>
         <div class="calctext" id="text7">
         <p>If your OPT employment start date is <input id="startDateSelect"  min="2021-01-01" max="2025-05-21" type="date" value="">, then your latest possible end date is <strong class="bubble"><span id="latestPossibleEnd"></span><span class="timeSpan">Your start date plus the number of OPT days you have available.</span></strong>.</p> 
         </div>
@@ -219,9 +217,10 @@
         </table>
     </div>
 
-        <button id="printOPTsummary" style="margin-top:1.2rem">Print OPT Summary</button>
-        <button id="reset" style="margin-top:1.2rem">Reset</button>
+        
+        <button id="reset" style="margin-top:1.2rem">Start Over</button>
         <button id="emailSummary" class="nxtBtn" data-pt="emailme" style="margin-top:1.2rem">Email me this information</button>
+        <button id="printOPTsummary" style="margin-top:1.2rem">Print OPT Summary</button>
         
     </div>
 
