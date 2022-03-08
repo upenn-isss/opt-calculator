@@ -269,7 +269,7 @@ function calcRemainingOPTTime() {
 
 // calculate end date based on remaining time and selected end date  
 function calcLatestEnd() {
-  latestEnd = makeDate(dateMath(startDateSelect.value,"+",remainingTime)); 
+  latestEnd = makeDate(dateMath(startDateSelect.value,"+",remainingTime-1)); 
   latestPossibleEnd.innerText = latestEnd;
   updateSummary();  
 }
@@ -303,6 +303,7 @@ function addEADrow() {
 
    document.querySelector("#opt-rows").appendChild(newRow);
    fadeIn(newRow); 
+   newRow.scrollIntoView();
 
 }
 
@@ -339,7 +340,7 @@ document.querySelectorAll(".nxtBtn").forEach((button) => {
     button.addEventListener("click", (e) => {
       document.querySelector(`#${button.dataset.pt}`).style.display = "block";
       fadeIn(document.querySelector(`#${button.dataset.pt}`));
-      
+      document.querySelector(`#${button.dataset.pt}`).scrollIntoView();
     });
   }
 });
@@ -373,7 +374,7 @@ previousopt.addEventListener("submit", (e) => {
 optYESradio.addEventListener("change", (e) => {
   if (e.target.checked) {
     pt5.style.display = "block";
-    
+    pt5.scrollIntoView();
   } else {
     pt5.style.display = "none";
   }
@@ -387,7 +388,7 @@ optNOradio.addEventListener("change", (e) => {
 
     pt6.style.display = "block";
     fadeIn(pt6);
-    
+    pt6.scrollIntoView();
     
 
     for (var i = document.querySelector("#opt-rows").querySelectorAll(".opt-row").length - 1; i > 0, i--;) {
@@ -399,7 +400,7 @@ optNOradio.addEventListener("change", (e) => {
 
   } else {
     pt5.style.display = "block";
-    
+    pt5.scrollIntoView();
   }
 });
 
@@ -443,11 +444,16 @@ calcRemainingBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const email = document.querySelector("#emailinput").value; 
     const formattedBOdy = `
+    Here is your OPT timeline from http://global.upenn.edu/isss/opt. \n\n
     Program End Date: ${makeDate(programEnd)} \n 
     Application Deadline: ${applyDeadline} \n
     Earliest Start Date: ${earlyStartDate} \n 
     Latest Start Date: ${lateStartDate} \n
+    Selected Start Date: ${makeDate(startDateSelect.value)} \n
+    Latest Possible End Date: ${latestEnd} \n \n \n
+    Good luck with your OPT application :) 
       `
+
     const link = `mailto:${email}?subject=My OPT Timeline&body=${encodeURIComponent(formattedBOdy)}`
     window.location.href = link;
   }
