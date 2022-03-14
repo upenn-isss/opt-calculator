@@ -43,20 +43,6 @@ function fadeIn(item) {
   item.classList.add("appear");
 }
 
-function printSummary() {
-  var prtContent = document.querySelector("#summaryTblWrapper");
-  var WinPrint = window.open(
-    "",
-    "",
-    "left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0"
-  );
-  WinPrint.document.write(prtContent.innerHTML);
-  WinPrint.document.close();
-  WinPrint.focus();
-  WinPrint.print();
-  WinPrint.close();
-}
-
 function resetCalculator() {
   let allSecs = document.querySelectorAll(".calc-section").length;
 
@@ -91,7 +77,6 @@ const calcRemainingBtn = document.querySelector("#calcRemaining");
 const startDateSelect = document.querySelector("#startDateSelect");
 const latestPossibleEnd = document.querySelector("#latestPossibleEnd");
 const viewSummaryBtn = document.querySelector("#viewSummary");
-const print = document.querySelector("#printOPTsummary");
 const reset = document.querySelector("#reset");
 
 // select each form step
@@ -409,10 +394,6 @@ startDateSelect.addEventListener("change", calcLatestEnd);
 // Display summary
 
 viewSummaryBtn.addEventListener("click", updateSummary);
-
-// Print button trigger
-
-print.addEventListener("click", printSummary);
 
 // Reset calculator
 
