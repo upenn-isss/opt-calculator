@@ -1,247 +1,248 @@
-* {
-  font-family: "Libre Franklin";
-  scroll-behavior: smooth;
+#backtosite
+{
+	display: block;
+	font-size: 0.75rem;
+	text-align: right;
+	text-transform: uppercase;
 }
-
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2rem;
+#optcalculator
+{
+	margin: auto;
+	width: 100%;
 }
-
-body {
-  padding: 0;
-  margin: 0;
-  background-size: 110%;
+#optcalculator h2
+{
+	text-align: center;
 }
-
-#optcalculator h2 {
-  text-align: center;
+#previousOPT
+{
+	padding-bottom: 1.3rem;
 }
-
-#text1 {
-  display: none;
+#pt2, #pt3, #pt4, #pt5, #pt6, #summary, #emailme
+{
+	display: none;
 }
-
-#startselect-inner {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+#startselect-inner
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 1rem;
 }
-
-#startselect-inner label {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 1rem;
-  flex-wrap: wrap;
+#startselect-inner label
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-right: 1rem;
 }
-
-.appear {
-  animation: fadein 1.5s ease;
+#summary .bubble
+{
+	background-color: #c20022;
 }
-
-.disappear {
-  animation: fadeout 1s ease;
+#summary table
+{
+	border: none;
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
 }
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#summary table th
+{
+	font-weight: bold;
 }
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+#summary table th, td
+{
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-collapse: collapse;
+	padding: 1rem;
 }
-
-.nxtBtn {
-  margin-top: 1rem;
+#text1
+{
+	display: none;
 }
-
-[data-pt="pt2"] {
-  display: none;
+*
+{
+	font-family: "Libre Franklin";
+	scroll-behavior: smooth;
 }
-
-.calc-section {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 1.4rem auto;
-  padding: 1rem;
+.appear
+{
+	animation: fadein 1.5s ease;
 }
-
-.appearDelay {
-  animation: 1s fadein 0.5s ease-in-out both;
+.appearDelay
+{
+	animation: 1s fadein 0.5s ease-in-out both;
 }
-
-#pt2,
-#pt3,
-#pt4,
-#pt5,
-#pt6,
-#summary,
-#emailme {
-  display: none;
+.btnrow
+{
+	display: flex;
+	justify-content: center;
 }
-
-.opt-row {
-  display: flex;
-  margin: 1.5rem auto !important;
-  background-color: #f0f0f0 !important;
+.bubble
+{
+	background-color: #00a8a3;
+	border-radius: 10px;
+	color: white;
+	display: inline-block;
+	font-weight: 600;
+	margin: 0.2rem;
+	padding: 0.2rem 0.4rem;
+	position: relative;
 }
-
-.opt-row input,
-.opt-row select {
-  border: 0;
-  margin-top: 0.3rem;
-  padding: 0.5rem;
+.bubble:hover > .timeSpan, .bubble:active > .timeSpan
+{
+	animation: fadeInFromNone 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 10px;
+	bottom: -130%;
+	box-shadow: 1rem 1rem 1rem rgb(0 0 0 / 10%);
+	color: white;
+	display: block;
+	font-size: 0.7rem;
+	font-weight: normal;
+	left: 0%;
+	opacity: 1;
+	padding: 0.4rem;
+	position: absolute;
+	text-align: center;
+	width: 120%;
+	z-index: 2;
 }
-
-.row-wrap {
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.bubble:hover, .bubble:active
+{
+	cursor: pointer;
 }
-
-label[for="emailinput"] {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.3rem;
+.calc-section
+{
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	margin: 1.4rem auto;
+	padding: 1rem;
 }
-
-.btnrow {
-  display: flex;
-  justify-content: center;
+.disappear
+{
+	animation: fadeout 1s ease;
 }
-
-#summary table {
-  border: none;
-  border-collapse: collapse;
-  text-align: left;
-  width: 100%;
+.nxtBtn
+{
+	margin-top: 1rem;
 }
-
-#summary table th {
-  font-weight: bold;
+.opt-row
+{
+	background-color: #f0f0f0 !important;
+	display: flex;
+	margin: 1.5rem auto !important;
 }
-
-#summary table th,
-td {
-  padding: 1rem;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-collapse: collapse;
+.opt-row input, .opt-row select
+{
+	border: 0;
+	margin-top: 0.3rem;
+	padding: 0.5rem;
 }
-
-#previousOPT {
-  padding-bottom: 1.3rem;
+.row-wrap
+{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
 }
-
-.timeSpan {
-  display: none;
-  opacity: 0;
+.timeSpan
+{
+	display: none;
+	opacity: 0;
 }
-
-.bubble:hover > .timeSpan,
-.bubble:active > .timeSpan {
-  display: block;
-  position: absolute;
-  left: 0%;
-  bottom: -130%;
-  width: 120%;
-  border-radius: 10px;
-  font-weight: normal;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  font-size: 0.7rem;
-  text-align: center;
-  padding: 0.4rem;
-  opacity: 1;
-  box-shadow: 1rem 1rem 1rem rgb(0 0 0 / 10%);
-  animation: fadeInFromNone 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  z-index: 2;
+@keyframes fadein
+{
+	from
+	{
+		opacity: 0;
+	}
+	to
+	{
+		opacity: 1;
+	}
 }
-
-.bubble:hover,
-.bubble:active {
-  cursor: pointer;
+@keyframes fadeInFromNone
+{
+	0%
+	{
+		display: none;
+		opacity: 0;
+	}
+	1%
+	{
+		display: block;
+		opacity: 0;
+	}
+	100%
+	{
+		display: block;
+		opacity: 1;
+	}
 }
-
-.bubble {
-  border-radius: 10px;
-  background-color: #00a8a3;
-  padding: 0.2rem 0.4rem;
-  color: white;
-  display: inline-block;
-  margin: 0.2rem;
-  font-weight: 600;
-  position: relative;
+@keyframes fadeout
+{
+	from
+	{
+		opacity: 1;
+	}
+	to
+	{
+		opacity: 0;
+	}
 }
-
-@keyframes fadeInFromNone {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  1% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: block;
-    opacity: 1;
-  }
+[data-pt="pt2"]
+{
+	display: none;
 }
-
-#summary .bubble {
-  background-color: #c20022;
+body
+{
+	background-size: 110%;
+	margin: 0;
+	padding: 0;
 }
-
-i {
-  color: #c20022;
+h2
+{
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 2rem;
 }
-
-hr {
-  border: 1px solid rgba(150, 150, 150, 0.1);
+hr
+{
+	border: 1px solid rgba(150, 150, 150, 0.1);
 }
-
-input[type="submit"],
-button {
-  padding: 0.5rem;
-  border: 0px;
-  border-radius: 5px;
-  background-color: #012563;
-  color: white;
-  transition: 0.5s ease all;
+i
+{
+	color: #c20022;
 }
-
-input[type="submit"]:hover,
-button:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
+input[type="submit"], button
+{
+	background-color: #012563;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+	padding: 0.5rem;
+	transition: 0.5s ease all;
 }
-
-select {
-  padding: 0.5rem;
-  margin-top: 0.2rem;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.075);
-  border-radius: 5px;
+input[type="submit"]:hover, button:hover
+{
+	background-color: rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
-
-#optcalculator {
-  width: 90%;
-  margin: auto;
+label[for="emailinput"]
+{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.3rem;
+}
+select
+{
+	background-color: rgba(0, 0, 0, 0.075);
+	border: none;
+	border-radius: 5px;
+	margin-top: 0.2rem;
+	padding: 0.5rem;
 }
