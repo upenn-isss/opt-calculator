@@ -11,8 +11,6 @@ h2 {
 body {
   padding: 0;
   margin: 0;
-  background-image: url("https://global.upenn.edu/themes/custom/penn_global/images/svg/background-patterns/pattern_global_light_waves.svg");
-  background-color: #f0f0f0;
   background-size: 110%;
 }
 
@@ -20,58 +18,8 @@ body {
   text-align: center;
 }
 
-.header-inner {
-  margin: auto;
-  width: 70%;
-  padding: 2rem 1rem;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-
-nav {
-  padding: 1rem;
-}
-
-#backtosite {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  display: block;
-  text-align: right;
-}
-
-.header-wrapper {
-  background-color: #01256e;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-inner::before {
-  position: absolute;
-  content: "";
-  background-color: #face00;
-  height: 6px;
-  width: 60%;
-  top: 15%;
-}
-
 #text1 {
   display: none;
-}
-
-.header-wrapper::before {
-  content: "";
-  background-image: url("https://global.upenn.edu/themes/custom/penn_global/images/svg/background-patterns/pattern_global_dark_chevrons.svg");
-  position: absolute;
-  z-index: 1;
-  opacity: 0.5;
-  background-repeat: repeat;
-  width: 1500px;
-  height: 1500px;
-}
-
-.header-logo {
-  padding: 2rem 4rem;
 }
 
 #startselect-inner {
