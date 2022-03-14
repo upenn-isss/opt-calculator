@@ -6,7 +6,7 @@ var lateStartDate; // Latest Start Date and Latest Date to Apply
 var endDate; // OPT Employment End Date
 var remainingTime = 365; //OPT Time Remaining
 var lblNames = 0;
-var latestEnd; 
+var latestEnd;
 
 const options = {
   timeZone: "UTC",
@@ -15,7 +15,6 @@ const options = {
   month: "long",
   day: "numeric",
 };
-
 
 // helper functions -------------------------
 
@@ -46,31 +45,32 @@ function fadeIn(item) {
 
 function printSummary() {
   var prtContent = document.querySelector("#summaryTblWrapper");
-  var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+  var WinPrint = window.open(
+    "",
+    "",
+    "left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0"
+  );
   WinPrint.document.write(prtContent.innerHTML);
   WinPrint.document.close();
   WinPrint.focus();
   WinPrint.print();
   WinPrint.close();
+}
+
+function resetCalculator() {
+  let allSecs = document.querySelectorAll(".calc-section").length;
+
+  for (var i = allSecs - 1; i > 0; i--) {
+    document.querySelectorAll(".calc-section")[i].style.display = "none";
   }
 
-  function resetCalculator() { 
+  fadeIn(pt1);
 
-    let allSecs = document.querySelectorAll(".calc-section").length
-
-       for(var i = allSecs - 1; i > 0; i--) {
-   document.querySelectorAll(".calc-section")[i].style.display= "none";
-    }
-
-  
-    fadeIn(pt1);
-       
-    text1.style.display = "none";
-    document.querySelector("[data-pt='pt2']").style.display = "none";
-    previousOPT.reset();
-    remainingTime = 365; 
-  
-  }
+  text1.style.display = "none";
+  document.querySelector("[data-pt='pt2']").style.display = "none";
+  previousOPT.reset();
+  remainingTime = 365;
+}
 
 // end helper functions ---------------------------
 
@@ -85,9 +85,9 @@ const year = document.querySelector("#sem");
 const season = document.querySelector("#season");
 const startselect = document.querySelector("#startselect");
 const previousopt = document.querySelector("#previousOPT");
-const optYESradio = document.querySelector("#optYES"); 
+const optYESradio = document.querySelector("#optYES");
 const optNOradio = document.querySelector("#optNO");
-const calcRemainingBtn  = document.querySelector("#calcRemaining");
+const calcRemainingBtn = document.querySelector("#calcRemaining");
 const startDateSelect = document.querySelector("#startDateSelect");
 const latestPossibleEnd = document.querySelector("#latestPossibleEnd");
 const viewSummaryBtn = document.querySelector("#viewSummary");
@@ -103,10 +103,9 @@ const pt4 = document.querySelector("#pt4");
 const pt5 = document.querySelector("#pt5");
 const pt6 = document.querySelector("#pt6");
 
-const summary = document.querySelector("#summary"); 
+const summary = document.querySelector("#summary");
 
-
-// dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar 
+// dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar
 
 const dates = {
   2022: {
@@ -121,7 +120,7 @@ const dates = {
   },
 };
 
-// class defines each existing past OPT authorization 
+// class defines each existing past OPT authorization
 
 class OptAuth {
   static OptLength = 0;
@@ -152,30 +151,28 @@ function set() {
   calcDates();
   updateTxt();
   calcEndDate();
-  calcLatestEnd(); 
+  calcLatestEnd();
   updateSummary();
 
-  if(text1.style.display=="none") {
-    text1.style.display=="block";
+  if (text1.style.display == "none") {
+    text1.style.display == "block";
   } else {
-    return; 
+    return;
   }
 
-  if(document.querySelector("#infotext1").style.display=="none") {
-    document.querySelector("#infotext1").style.display=="block";
+  if (document.querySelector("#infotext1").style.display == "none") {
+    document.querySelector("#infotext1").style.display == "block";
   } else {
-    return; 
+    return;
   }
-
 }
 
 function calcDates() {
-  earlyStartDate = makeDate(dateMath(programEnd, "+", 1)) // Earliest requested start date: Program end date + 1
+  earlyStartDate = makeDate(dateMath(programEnd, "+", 1)); // Earliest requested start date: Program end date + 1
   lateStartDate = makeDate(dateMath(programEnd, "+", 60)); // Latest OPT start date: Program end date + 60
   earlyApply = makeDate(dateMath(programEnd, "-", 90)); // Earliest date to apply: Program end date - 90
   applyDeadline = makeDate(dateMath(programEnd, "+", 60));
 }
-
 
 //update all text fields
 function updateTxt() {
@@ -183,7 +180,9 @@ function updateTxt() {
 
   // first section --
   text1.innerHTML = `
-  <p>Your program end date is <strong class="bubble" tabindex="0">${makeDate(programEnd)}. <span class="timeSpan">Final day of the semester.</span></strong></p>
+  <p>Your program end date is <strong class="bubble" tabindex="0">${makeDate(
+    programEnd
+  )}. <span class="timeSpan">Final day of the semester.</span></strong></p>
   `;
 
   if (degree.value == "phd") {
@@ -209,17 +208,12 @@ function updateTxt() {
   Your start date must be no later than <strong class="bubble" tabindex="0">${lateStartDate} <span class="timeSpan">60 days after program end date.</span></strong>.
   `;
   //end third section --
-
- 
 }
 
-
-
-// use custom prog end date 
+// use custom prog end date
 
 function useCustomDate() {
   programEnd = document.querySelector("#customdate").value;
-  console.log(programEnd);
   updateTxt();
   calcDates();
   calcEndDate();
@@ -228,33 +222,37 @@ function useCustomDate() {
 
 // initializes value of select in final form step with program end date + one day
 
-function calcEndDate() { 
-    startDateSelect.value = dateMath(programEnd,"+",1).toISOString().split("T")[0]; 
-    text6.innerHTML = `You have <strong class="bubble">${remainingTime}/365 <span class="timeSpan" tabindex="0">You have used ${OptAuth.OptLength} days of OPT.</span></strong> days of OPT remaining.`;
-} 
+function calcEndDate() {
+  startDateSelect.value = dateMath(programEnd, "+", 1)
+    .toISOString()
+    .split("T")[0];
+  text6.innerHTML = `You have <strong class="bubble">${remainingTime}/365 <span class="timeSpan" tabindex="0">You have used ${OptAuth.OptLength} days of OPT.</span></strong> days of OPT remaining.`;
+}
 
 // updates summary table
 
-function updateSummary() { 
-
+function updateSummary() {
   summary.querySelector("#summary-progend").innerText = makeDate(programEnd);
   summary.querySelector("#summary-earlyst").innerText = earlyStartDate;
   summary.querySelector("#summary-latestst").innerText = lateStartDate;
-  summary.querySelector("#summary-appdeadline").innerText = applyDeadline; 
+  summary.querySelector("#summary-appdeadline").innerText = applyDeadline;
   summary.querySelector("#summary-optremain").innerText = remainingTime;
-  summary.querySelector("#summary-startdt").innerText = makeDate(startDateSelect.value);
-  summary.querySelector("#summary-enddt").innerText =  latestEnd;
+  summary.querySelector("#summary-startdt").innerText = makeDate(
+    startDateSelect.value
+  );
+  summary.querySelector("#summary-enddt").innerText = latestEnd;
 }
 
 // calculates remaining OPT time based on used OPT time at same degree lvl
 
 function calcRemainingOPTTime() {
-  OptAuth.OptLength = 0; // reinitialize total used OPT time to 0 
+  OptAuth.OptLength = 0; // reinitialize total used OPT time to 0
   document.querySelectorAll(".opt-row").forEach((row) => {
-    if (row.querySelector(".past-opt-start").value == "") {  // account for empty rows
+    if (row.querySelector(".past-opt-start").value == "") {
+      // account for empty rows
       return;
     } else {
-      const oldStart = row.querySelector(".past-opt-start").value; 
+      const oldStart = row.querySelector(".past-opt-start").value;
       const oldEnd = row.querySelector(".past-opt-end").value;
       const optLoad = row.querySelector("select").value;
       const newOpt = new OptAuth(new Date(oldStart), new Date(oldEnd), optLoad);
@@ -266,23 +264,20 @@ function calcRemainingOPTTime() {
   updateSummary();
 }
 
-
-// calculate end date based on remaining time and selected end date  
+// calculate end date based on remaining time and selected end date
 function calcLatestEnd() {
-  latestEnd = makeDate(dateMath(startDateSelect.value,"+",remainingTime-1)); 
+  latestEnd = makeDate(dateMath(startDateSelect.value, "+", remainingTime - 1));
   latestPossibleEnd.innerText = latestEnd;
-  updateSummary();  
+  updateSummary();
 }
 
 function addEADrow() {
-  lblNames++; 
-  
-  const newRow = document.createElement("fieldset");
-  
-  newRow.classList.add("opt-row");
-  newRow.setAttribute("id",`opt-rows${lblNames}`)
+  lblNames++;
 
-  
+  const newRow = document.createElement("fieldset");
+
+  newRow.classList.add("opt-row");
+  newRow.setAttribute("id", `opt-rows${lblNames}`);
 
   newRow.innerHTML += `
                 <div class="row-wrap">
@@ -299,39 +294,30 @@ function addEADrow() {
                             <option value="ft">Full-Time</option>
                             <option value="pt">Part-Time (&lt;20 hrs/wk)</option>
                         </select></label>        
-  `
+  `;
 
-   document.querySelector("#opt-rows").appendChild(newRow);
-   fadeIn(newRow); 
-   newRow.scrollIntoView();
-
+  document.querySelector("#opt-rows").appendChild(newRow);
+  fadeIn(newRow);
+  document.documentElement.scrollTop = newRow.offsetTop;
 }
 
-
-
-
-
 function showFirstBtn() {
-  console.log("shown!")
   document.querySelector("[data-pt='pt2']").classList.remove("appear");
   void document.querySelector("[data-pt='pt2']").offsetWidth;
   document.querySelector("[data-pt='pt2']").classList.add("appear");
   document.querySelector("[data-pt='pt2']").style.display = "block";
 }
 
+// Event Listeners
 
-
-// Event Listeners 
-
-// Submit for program date 
+// Submit for program date
 
 startselect.addEventListener("submit", (e) => {
   e.preventDefault();
   set();
 });
 
-
-// Display next section on button click based on data attribute 
+// Display next section on button click based on data attribute
 
 document.querySelectorAll(".nxtBtn").forEach((button) => {
   if (button.dataset.pt == "") {
@@ -340,41 +326,46 @@ document.querySelectorAll(".nxtBtn").forEach((button) => {
     button.addEventListener("click", (e) => {
       document.querySelector(`#${button.dataset.pt}`).style.display = "block";
       fadeIn(document.querySelector(`#${button.dataset.pt}`));
-      document.querySelector(`#${button.dataset.pt}`).scrollIntoView();
+      document.documentElement.scrollTop = document.querySelector(
+        `#${button.dataset.pt}`
+      ).offsetTop;
     });
   }
 });
 
-
-
 // Add New EAD Row on click
 
-document.querySelector("#addrow").addEventListener("click", (e) => { 
+document.querySelector("#addrow").addEventListener("click", (e) => {
   addEADrow();
-  document.querySelector(`#past-opt-start${lblNames}`).addEventListener("change", (e) => {
-  document.querySelector(`#past-opt-end${lblNames}`).setAttribute("min", document.querySelector(`#past-opt-start${lblNames}`).value);
-  })
-});  
+  document
+    .querySelector(`#past-opt-start${lblNames}`)
+    .addEventListener("change", (e) => {
+      document
+        .querySelector(`#past-opt-end${lblNames}`)
+        .setAttribute(
+          "min",
+          document.querySelector(`#past-opt-start${lblNames}`).value
+        );
+    });
+});
 
-
-
-// Show the first button and then remove the event listener 
+// Show the first button and then remove the event listener
 
 startselect.addEventListener("submit", showFirstBtn);
 
-// Display next section on button click based on data attribute 
+// Display next section on button click based on data attribute
 
 previousopt.addEventListener("submit", (e) => {
   e.preventDefault();
   set();
 });
 
-//event listener for "yes" option 
+//event listener for "yes" option
 
 optYESradio.addEventListener("change", (e) => {
   if (e.target.checked) {
     pt5.style.display = "block";
-    pt5.scrollIntoView();
+    document.documentElement.scrollTop = pt5.offsetTop;
   } else {
     pt5.style.display = "none";
   }
@@ -388,62 +379,68 @@ optNOradio.addEventListener("change", (e) => {
 
     pt6.style.display = "block";
     fadeIn(pt6);
-    pt6.scrollIntoView();
-    
+    document.documentElement.scrollTop = pt6.offsetTop;
 
-    for (var i = document.querySelector("#opt-rows").querySelectorAll(".opt-row").length - 1; i > 0, i--;) {
-      document.querySelector("#opt-rows").querySelectorAll(".opt-row")[i].remove();
+    for (
+      var i =
+        document.querySelector("#opt-rows").querySelectorAll(".opt-row")
+          .length - 1;
+      i > 0, i--;
+
+    ) {
+      document
+        .querySelector("#opt-rows")
+        .querySelectorAll(".opt-row")
+        [i].remove();
     }
 
     calcEndDate();
     calcLatestEnd();
-
   } else {
     pt5.style.display = "block";
-    pt5.scrollIntoView();
+    document.documentElement.scrollTop = pt5.offsetTop;
   }
 });
 
-// Change end date based on date input 
+// Change end date based on date input
 
 startDateSelect.addEventListener("change", calcLatestEnd);
 
-// Display summary 
+// Display summary
 
-viewSummaryBtn.addEventListener("click", updateSummary); 
+viewSummaryBtn.addEventListener("click", updateSummary);
 
-// Print button trigger  
+// Print button trigger
 
 print.addEventListener("click", printSummary);
 
-// Reset calculator 
+// Reset calculator
 
 reset.addEventListener("click", resetCalculator);
 
 // Calculate remaining OPT time on button click
 
-calcRemainingBtn.addEventListener("click", (e) => { 
+calcRemainingBtn.addEventListener("click", (e) => {
   calcRemainingOPTTime();
-  if(pt6.style.display!="block") { 
-     pt6.style.display = "block"
- } 
- calcEndDate();
- calcLatestEnd();
- });
- 
+  if (pt6.style.display != "block") {
+    pt6.style.display = "block";
+  }
+  calcEndDate();
+  calcLatestEnd();
+});
 
- // prevent user from selecting previous end dates that are before the start date on the first EAD
+// prevent user from selecting previous end dates that are before the start date on the first EAD
 
- document.querySelector(`#past-opt-start0`).addEventListener("change", (e) => {
-  document.querySelector(`#past-opt-end0`).setAttribute("min", document.querySelector(`#past-opt-start0`).value);
-  })
+document.querySelector(`#past-opt-start0`).addEventListener("change", (e) => {
+  document
+    .querySelector(`#past-opt-end0`)
+    .setAttribute("min", document.querySelector(`#past-opt-start0`).value);
+});
 
-
-
-  document.querySelector("#email").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.querySelector("#emailinput").value; 
-    const formattedBOdy = `
+document.querySelector("#email").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = document.querySelector("#emailinput").value;
+  const formattedBOdy = `
     Here is your OPT timeline from http://global.upenn.edu/isss/opt. \n\n
     Program End Date: ${makeDate(programEnd)} \n 
     Application Deadline: ${applyDeadline} \n
@@ -452,19 +449,19 @@ calcRemainingBtn.addEventListener("click", (e) => {
     Selected Start Date: ${makeDate(startDateSelect.value)} \n
     Latest Possible End Date: ${latestEnd} \n \n \n
     Good luck with your OPT application :) 
-      `
+      `;
 
-    const link = `mailto:${email}?subject=My OPT Timeline&body=${encodeURIComponent(formattedBOdy)}`
-    window.location.href = link;
-  }
-  )
+  const link = `mailto:${email}?subject=My OPT Timeline&body=${encodeURIComponent(
+    formattedBOdy
+  )}`;
+  window.location.href = link;
+});
 
-
-
-
-  earlyStartDate;
-  summary.querySelector("#summary-latestst").innerText = lateStartDate;
-  summary.querySelector("#summary-appdeadline").innerText = applyDeadline; 
-  summary.querySelector("#summary-optremain").innerText = remainingTime;
-  summary.querySelector("#summary-startdt").innerText = makeDate(startDateSelect.value);
-  summary.querySelector("#summary-enddt").innerText =  latestEnd;
+earlyStartDate;
+summary.querySelector("#summary-latestst").innerText = lateStartDate;
+summary.querySelector("#summary-appdeadline").innerText = applyDeadline;
+summary.querySelector("#summary-optremain").innerText = remainingTime;
+summary.querySelector("#summary-startdt").innerText = makeDate(
+  startDateSelect.value
+);
+summary.querySelector("#summary-enddt").innerText = latestEnd;
