@@ -13,16 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-       
-        <div class="header-logo">
-            <img class="logo__img" src="https://global.upenn.edu/sites/default/files/2018-02/logo--isss.svg" alt="Penn Global">
-        </div>
+    <!-- <header>
         <div class="header-wrapper">
             <div class="header-inner">
         <h2>OPT Calculator for Penn F-1 International Students</h2>
@@ -30,214 +28,234 @@
     </div>
     </div>
 
-    </header>
-<section id="optcalculator">
-    
-    <!-- Form Pt 1 -->
-    <div class="calc-section" id="pt1">
-        <form id="startselect">
-            <p><em>Select your degree level, graduation semester, and graduation year and then click "confirm."</em></p>
-            <hr/>
-            <div id="startselect-inner">
-            <label for="lvl">Degree Level
-            <select id="lvl" required>
-                <option value="bachelors">Bachelor's</option>
-                <option value="masters">Master's/Professional</option>
-                <option value="phd">Doctoral</option>
-            </select></label>
+    </header> -->
+    <section id="optcalculator">
 
-            <label for="season">Graduation Semester <select id="season" required>
-                <option value="" disabled>Semester</option>
-                <option value="spring">Spring</option>
-                <option value="summer">Summer</option>
-                <option value="fall">Fall</option>
-            </select></label>
-
-            <label for="sem">Graduation Year <select id="sem">
-                <option value="" disabled>Year</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
-            </label>
-        </div>
-
-            <input type="submit" class="nxtBtn" data-pt = "text1" id="confirm" value="Confirm"></input>
-        </form>
-
-        <div class="calctext" id="text1">
-            
-        </div>
-        <div class="infotext" id = "infotext1">
-        <hr/>
-        <p><i class="fa-solid fa-calendar"></i> <strong>&nbsp;Note:</strong> <em>For additional dates, please consult the <a href="https://almanac.upenn.edu/penn-academic-calendar" target="_blank">Penn Academic Calendar.</a></em></p>
-
-        <input type="submit" data-pt="pt2" class="nxtBtn" value="Next: Your OPT Application Timeline"></input>
-       </div>    
-    </div>
-
-    <!-- Form Pt 2 -->
-
-    <div class="calc-section" id="pt2">
-        <h3>Your OPT Application Processing Timeline</h3>
-
-        <div class="calctext" id="text2">
-
-        </div>
-        <hr/>
-        <p><i class="fa-solid fa-circle-info"></i> We recommend filing your OPT application online. Please refer to our <a href="https://global.upenn.edu/isss/i765-online" target="_blank">guide for applying for OPT online</a> and our <a href="https://global.upenn.edu/sites/default/files/OPTchecklist.pdf" target="_blank">OPT application checklist.</a> </p>
-        <p>Remember, you <em>must</em> send your OPT application <strong>within 30 days</strong> of the date you receive your OPT I-20 from ISSS. Otherwise, your application will be denied.</p>
-
-        
-
-        <input type="submit" data-pt="pt3" class="nxtBtn" value="Next: Choosing Your Start Date"></input>
-    </div>
-
-    <!-- Form Pt 3 -->
-
-    <div class="calc-section" id="pt3">
-        <h3>Choosing Your OPT Start Date</h3>
-        <div class="calctext" id="text3">
-
-        </div>
-        <hr/>
-        <p><i class="fa-solid fa-circle-info"></i> Your OPT start date is the date on which your Employment Authorization Document (EAD) becomes valid and on which you begin accruing unemployment if you have not yet found a job.</p> <p> Do not begin working before your start date, even if you have already received your EAD!</p>
-
-        <input type="submit" data-pt="pt4" class="nxtBtn" value="Next: Choosing Your End Date"></input>
-
-    </div>
-
-    <!-- Form Pt 4 -->
-
-    <div class="calc-section" id="pt4">
-        <h3>Choosing Your OPT End Date</h3>
-
-        <p><em> F-1 international students get 365 days of OPT time per degree level. Your end date depends on how many days of OPT you have left.</em></p>
-        <hr/>
-        <form action="#" id="previousOPT">
-            <legend><strong>Have you ever used OPT <em>at your current degree level?</em></strong></legend>
-            <label for="optYES"><input type="radio" required value="optYES" id="optYES" name="previousOPT" /> Yes
-            </label>
-            <label for="optNO"><input type="radio" required value="optNO" id="optNO" name="previousOPT" /> No </label>
-            <!-- <input type="submit" id="previousopt" class="optNext" value="Confirm"></input> -->
-        </form>
-
-        
-
-        <div class="calctext" id="text4">
-
-        </div>
-
-
-    </div>
-
-    <!-- Form Pt 5 -->
-
-    <div class="calc-section" id="pt5">
-        <h3>Previous OPT Authorizations</h3>
-        <p>Use your previous Employment Authorization Documents (EADs) to fill in the start and end dates for your any OPT employment undergone <em>at your current degree level.</em> When you're done, click "Calculate Remaining OPT Time."</p>
-        <hr/>
-        <form id="opt-rows">
-            <fieldset class="opt-row" id="opt-row0">
-                <div class="row-wrap">
-                    <label for="past-opt-start0">Start Date
-                        <input type="date" id="past-opt-start0" name="past-opt" class="past-opt-start"></label>
-                </div>
-                <div class="row-wrap">
-                    <label for="past-opt-end0">End Date
-                        <input type="date" id="past-opt-end0" name="past-opt" class="past-opt-end"></label>
-                </div>
-                <div class="row-wrap">
-                    <label for="pt-ft0">Full-Time/Part-Time
-                        <select name="pt-ft" id="pt-ft0">
-                            <option value="ft">Full-Time</option>
-                            <option value="pt">Part-Time (&lt;20 hrs/wk)</option>
+        <!-- Form Pt 1 -->
+        <div class="calc-section" id="pt1">
+            <form id="startselect">
+                <p><em>Select your degree level, graduation semester, and graduation year and then click "confirm."</em>
+                </p>
+                <hr />
+                <div id="startselect-inner">
+                    <label for="lvl">Degree Level
+                        <select id="lvl" required>
+                            <option value="bachelors">Bachelor's</option>
+                            <option value="masters">Master's/Professional</option>
+                            <option value="phd">Doctoral</option>
                         </select></label>
-            </fieldset>
-        </form>
 
-        <div class="btnrow">
-            <button id="addrow">Add New EAD</button> 
+                    <label for="season">Graduation Semester <select id="season" required>
+                            <option value="" disabled>Semester</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select></label>
+
+                    <label for="sem">Graduation Year <select id="sem">
+                            <option value="" disabled>Year</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </label>
+                </div>
+
+                <input type="submit" class="nxtBtn" data-pt="text1" id="confirm" value="Confirm"></input>
+            </form>
+
+            <div class="calctext" id="text1">
+
+            </div>
+            <div class="infotext" id="infotext1">
+                <hr />
+                <p><i class="fa-solid fa-calendar"></i> <strong>&nbsp;Note:</strong> <em>For additional dates, please
+                        consult the <a href="https://almanac.upenn.edu/penn-academic-calendar" target="_blank">Penn
+                            Academic Calendar.</a></em></p>
+
+                <input type="submit" data-pt="pt2" class="nxtBtn" value="Next: Your OPT Application Timeline"></input>
+            </div>
         </div>
 
+        <!-- Form Pt 2 -->
 
-        <div class="calctext" id="text5">
+        <div class="calc-section" id="pt2">
+            <h3>Your OPT Application Processing Timeline</h3>
+
+            <div class="calctext" id="text2">
+
+            </div>
+            <hr />
+            <p><i class="fa-solid fa-circle-info"></i> We recommend filing your OPT application online. Please refer to
+                our <a href="https://global.upenn.edu/isss/i765-online" target="_blank">guide for applying for OPT
+                    online</a> and our <a href="https://global.upenn.edu/sites/default/files/OPTchecklist.pdf"
+                    target="_blank">OPT application checklist.</a> </p>
+            <p>Remember, you <em>must</em> send your OPT application <strong>within 30 days</strong> of the date you
+                receive your OPT I-20 from ISSS. Otherwise, your application will be denied.</p>
+
+
+
+            <input type="submit" data-pt="pt3" class="nxtBtn" value="Next: Choosing Your Start Date"></input>
+        </div>
+
+        <!-- Form Pt 3 -->
+
+        <div class="calc-section" id="pt3">
+            <h3>Choosing Your OPT Start Date</h3>
+            <div class="calctext" id="text3">
+
+            </div>
+            <hr />
+            <p><i class="fa-solid fa-circle-info"></i> Your OPT start date is the date on which your Employment
+                Authorization Document (EAD) becomes valid and on which you begin accruing unemployment if you have not
+                yet found a job.</p>
+            <p> Do not begin working before your start date, even if you have already received your EAD!</p>
+
+            <input type="submit" data-pt="pt4" class="nxtBtn" value="Next: Choosing Your End Date"></input>
 
         </div>
 
-        <input type="submit" data-pt="pt6" id = "calcRemaining" class="nxtBtn" value="Calculate Remaining OPT Time"></input>
+        <!-- Form Pt 4 -->
 
-    </div>
+        <div class="calc-section" id="pt4">
+            <h3>Choosing Your OPT End Date</h3>
 
-    <!-- Form Pt 6 -->
+            <p><em> F-1 international students get 365 days of OPT time per degree level. Your end date depends on how
+                    many days of OPT you have left.</em></p>
+            <hr />
+            <form action="#" id="previousOPT">
+                <legend><strong>Have you ever used OPT <em>at your current degree level?</em></strong></legend>
+                <label for="optYES"><input type="radio" required value="optYES" id="optYES" name="previousOPT" /> Yes
+                </label>
+                <label for="optNO"><input type="radio" required value="optNO" id="optNO" name="previousOPT" /> No
+                </label>
+                <!-- <input type="submit" id="previousopt" class="optNext" value="Confirm"></input> -->
+            </form>
 
-    <div class="calc-section" id="pt6">
-        
-        <div class="calctext" id="text6">
-           
+
+
+            <div class="calctext" id="text4">
+
+            </div>
+
+
         </div>
-        <p>Use the date picker below to calculate your OPT end date based on your selected start date.</p>
-        <div class="calctext" id="text7">
-        <p>If your OPT employment start date is <input id="startDateSelect"  min="2021-01-01" max="2025-05-21" type="date" value="">, then your latest possible end date is <strong class="bubble"><span id="latestPossibleEnd"></span><span class="timeSpan">Your start date plus the number of OPT days you have available.</span></strong>.</p> 
+
+        <!-- Form Pt 5 -->
+
+        <div class="calc-section" id="pt5">
+            <h3>Previous OPT Authorizations</h3>
+            <p>Use your previous Employment Authorization Documents (EADs) to fill in the start and end dates for your
+                any OPT employment undergone <em>at your current degree level.</em> When you're done, click "Calculate
+                Remaining OPT Time."</p>
+            <hr />
+            <form id="opt-rows">
+                <fieldset class="opt-row" id="opt-row0">
+                    <div class="row-wrap">
+                        <label for="past-opt-start0">Start Date
+                            <input type="date" id="past-opt-start0" name="past-opt" class="past-opt-start"></label>
+                    </div>
+                    <div class="row-wrap">
+                        <label for="past-opt-end0">End Date
+                            <input type="date" id="past-opt-end0" name="past-opt" class="past-opt-end"></label>
+                    </div>
+                    <div class="row-wrap">
+                        <label for="pt-ft0">Full-Time/Part-Time
+                            <select name="pt-ft" id="pt-ft0">
+                                <option value="ft">Full-Time</option>
+                                <option value="pt">Part-Time (&lt;20 hrs/wk)</option>
+                            </select></label>
+                </fieldset>
+            </form>
+
+            <div class="btnrow">
+                <button id="addrow">Add New EAD</button>
+            </div>
+
+
+            <div class="calctext" id="text5">
+
+            </div>
+
+            <input type="submit" data-pt="pt6" id="calcRemaining" class="nxtBtn"
+                value="Calculate Remaining OPT Time"></input>
+
         </div>
 
-        <input type="submit" data-pt="summary" id = "viewSummary" class="nxtBtn" value="View Summary"></input>
-    </div>
+        <!-- Form Pt 6 -->
+
+        <div class="calc-section" id="pt6">
+
+            <div class="calctext" id="text6">
+
+            </div>
+            <p>Use the date picker below to calculate your OPT end date based on your selected start date.</p>
+            <div class="calctext" id="text7">
+                <p>If your OPT employment start date is <input id="startDateSelect" min="2021-01-01" max="2025-05-21"
+                        type="date" value="">, then your latest possible end date is <strong class="bubble"><span
+                            id="latestPossibleEnd"></span><span class="timeSpan">Your start date plus the number of OPT
+                            days you have available.</span></strong>.</p>
+            </div>
+
+            <input type="submit" data-pt="summary" id="viewSummary" class="nxtBtn" value="View Summary"></input>
+        </div>
 
         <!-- Form Pt 7 -->
- 
-    <div class="calc-section" id="summary">
-        <h3>Your OPT Timeline Summary</h3>
-        <div id="summaryTblWrapper">
-        <table>
-            <tr>
-                <th>Program End Date:</th>
-                <td><span class="bubble" id="summary-progend"></span></td>
-            </tr>
-            <tr>
-                <th>Earliest Start Date:</th>
-                <td><span class="bubble" id="summary-earlyst"></span></td>
-            </tr>
-            <tr>
-                <th>Latest Start Date:</th>
-                <td><span class="bubble" id="summary-latestst"></span></td>
-            </tr>
-            <tr>
-                <th>USCIS Application Deadline:</th>
-                <td><span class="bubble" id="summary-appdeadline"></span></td>
-            </tr>
-            <tr>
-                <th>OPT Days Remaining:</th>
-                <td><span class="bubble" id="summary-optremain"></span></td>
-            </tr>
-            <tr>
-                <th>Selected Start Date:</th>
-                <td><span class="bubble" class="summary-element" id="summary-startdt"></span></td>
-            </tr>
-            <tr>
-                <th>Latest Possible End Date:</th>
-                <td><span class="bubble" id="summary-enddt"></span></td>
-            </tr>
-        </table>
-    </div>
 
-        
-        <button id="reset" style="margin-top:1.2rem">Start Over</button>
-        <button id="emailSummary" class="nxtBtn" data-pt="emailme" style="margin-top:1.2rem">Email me this information</button>
-        <button id="printOPTsummary" style="margin-top:1.2rem">Print OPT Summary</button>
-        
-    </div>
+        <div class="calc-section" id="summary">
+            <h3>Your OPT Timeline Summary</h3>
+            <div id="summaryTblWrapper">
+                <table>
+                    <tr>
+                        <th>Program End Date:</th>
+                        <td><span class="bubble" id="summary-progend"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Earliest Start Date:</th>
+                        <td><span class="bubble" id="summary-earlyst"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Latest Start Date:</th>
+                        <td><span class="bubble" id="summary-latestst"></span></td>
+                    </tr>
+                    <tr>
+                        <th>USCIS Application Deadline:</th>
+                        <td><span class="bubble" id="summary-appdeadline"></span></td>
+                    </tr>
+                    <tr>
+                        <th>OPT Days Remaining:</th>
+                        <td><span class="bubble" id="summary-optremain"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Selected Start Date:</th>
+                        <td><span class="bubble" class="summary-element" id="summary-startdt"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Latest Possible End Date:</th>
+                        <td><span class="bubble" id="summary-enddt"></span></td>
+                    </tr>
+                </table>
+            </div>
 
-    <div class="calc-section" id="emailme">
-        <h3>Email My Summary</h3>
-        <p>Enter your email address below to copy the summary information into an email that you can send to yourself for future reference. </p>
 
-        <form id="email" method="#">
-            
-            <label for="emailinput">Your Email Address<input type="email" id="emailinput"/></label>
-            <input type="submit" id="emailsubmit" value="Send Me an Email!"/>
+            <button id="reset" style="margin-top:1.2rem">Start Over</button>
+            <button id="emailSummary" class="nxtBtn" data-pt="emailme" style="margin-top:1.2rem">Email me this
+                information</button>
+            <button id="printOPTsummary" style="margin-top:1.2rem">Print OPT Summary</button>
+
+        </div>
+
+        <div class="calc-section" id="emailme">
+            <h3>Email My Summary</h3>
+            <p>Enter your email address below to copy the summary information into an email that you can send to
+                yourself for future reference. </p>
+
+            <form id="email" method="#">
+
+                <label for="emailinput">Your Email Address<input type="email" id="emailinput" /></label>
+                <input type="submit" id="emailsubmit" value="Send Me an Email!" />
             </form>
-    </div>
-</section>
+        </div>
+    </section>
 
     <script src="script.js" async defer></script>
     <script src="https://kit.fontawesome.com/e416ed71ec.js" crossorigin="anonymous"></script>
