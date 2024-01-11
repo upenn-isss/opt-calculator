@@ -90,7 +90,7 @@ const pt6 = document.querySelector("#pt6");
 
 const summary = document.querySelector("#summary");
 
-// dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar
+// dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar ; https://www.ipenn.oip.upenn.edu/istart/xservices/services/upenn-codes.cfm
 
 const dates = {
   2024: {
