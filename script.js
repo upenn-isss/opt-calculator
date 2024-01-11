@@ -93,15 +93,15 @@ const summary = document.querySelector("#summary");
 // dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar
 
 const dates = {
-  2022: {
-    spring: "2022-05-16",
-    summer: "2022-08-05",
-    fall: "2022-12-22",
+  2024: {
+    spring: "2024-05-20",
+    summer: "2024-08-09",
+    fall: "2024-12-19",
   },
-  2023: {
-    spring: "2023-05-15",
-    summer: "2023-08-04",
-    fall: "2023-12-21",
+  2025: {
+    spring: "2025-05-19",
+    summer: "2025-08-08",
+    fall: "2025-12-18",
   },
 };
 
