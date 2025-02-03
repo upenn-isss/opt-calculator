@@ -187,7 +187,7 @@ function updateTxt() {
 
   //second section --
   text2.innerHTML = `
-  <p>You may send your application to USCIS as early as <strong class="bubble" tabindex="0">${earlyApply} <span class="timeSpan">90 days before program end date.</span></strong>. 
+  <p>After receiving your OPT I-20 from ISSS, you may send your application to USCIS as early as <strong class="bubble" tabindex="0">${earlyApply} <span class="timeSpan">90 days before program end date.</span></strong>. 
   Your application must be <em>received by USCIS</em> by <strong class="bubble" tabindex="0">${applyDeadline} <span class="timeSpan">60 days after program end date.</span></strong>.
   `;
   //end second section --
