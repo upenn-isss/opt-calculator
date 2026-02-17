@@ -107,6 +107,7 @@ const dates = {
     spring: "2027-05-24",
     summer: "2027-08-13",
     fall: "2027-12-22",
+  },
 };
 
 // class defines each existing past OPT authorization
@@ -450,3 +451,4 @@ summary.querySelector("#summary-startdt").innerText = makeDate(
   startDateSelect.value
 );
 summary.querySelector("#summary-enddt").innerText = latestEnd;
+
