@@ -93,11 +93,6 @@ const summary = document.querySelector("#summary");
 // dates from Penn academic calendar: https://almanac.upenn.edu/penn-academic-calendar ; https://www.ipenn.oip.upenn.edu/istart/xservices/services/upenn-codes.cfm
 
 const dates = {
-  2024: {
-    spring: "2024-05-20",
-    summer: "2024-08-09",
-    fall: "2024-12-19",
-  },
   2025: {
     spring: "2025-05-19",
     summer: "2025-08-08",
@@ -108,6 +103,10 @@ const dates = {
     summer: "2026-08-07",
     fall: "2026-12-18",
   },
+  2027: {
+    spring: "2027-05-24",
+    summer: "2027-08-13",
+    fall: "2027-12-22",
 };
 
 // class defines each existing past OPT authorization
